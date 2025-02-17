@@ -64,6 +64,22 @@
         <button onclick="viderPanier()">Vider le panier</button>
     </div>
 
+    <!-- Section Panier -->
+<div id="panier" class="hidden">
+    <h2>Votre Panier</h2>
+    <ul id="panier-liste"></ul>
+    <p>Total : <span id="total-prix">0</span>€</p>
+    
+    <!-- Bouton de paiement Stripe -->
+    <button id="stripe-pay">Payer avec Stripe</button>
+
+    <!-- Bouton de paiement PayPal -->
+    <div id="paypal-button-container"></div>
+
+    <button onclick="viderPanier()">Vider le panier</button>
+</div>
+
+
     <script src="script.js"></script>
 </body>
 </html>
