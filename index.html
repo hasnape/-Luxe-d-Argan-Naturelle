@@ -8,77 +8,20 @@
 </head>
 <body>
 
-    <!-- En-tête -->
     <header>
         <h1>Huile d'Argan Naturelle</h1>
         <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Contact</a></li>
-                <li id="cart-btn">🛒 Panier (<span id="cart-count">0</span>)</li>
-            </ul>
+            <a href="index.html">Accueil</a>
+            <a href="produit.html">Nos Produits</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin-login.html">Admin</a>
         </nav>
     </header>
 
-    <!-- Section des Produits -->
-    <section class="produits">
+    <section id="produits">
         <h2>Nos Produits</h2>
-        <div class="produits-container">
-            <!-- Produits listés -->
-            <div class="produit">
-                <img src="huile-argan.jpg" alt="Huile d'Argan Bio">
-                <h3>Huile d'Argan Bio</h3>
-                <p>Flacon de 100ml - 15€</p>
-                <button onclick="ajouterAuPanier('Huile d\'Argan Bio', 15)">Ajouter</button>
-            </div>
-            
-            <div class="produit">
-                <img src="savon-argan.jpg" alt="Savon à l'Argan">
-                <h3>Savon à l'Argan</h3>
-                <p>Lot de 3 - 10€</p>
-                <button onclick="ajouterAuPanier('Savon à l\'Argan', 10)">Ajouter</button>
-            </div>
-            
-            <div class="produit">
-                <img src="creme-argan.jpg" alt="Crème hydratante à l'Argan">
-                <h3>Crème hydratante</h3>
-                <p>Pot de 50ml - 18€</p>
-                <button onclick="ajouterAuPanier('Crème hydratante', 18)">Ajouter</button>
-            </div>
-
-            <div class="produit">
-                <img src="serum-argan.jpg" alt="Sérum visage à l'Argan">
-                <h3>Sérum visage à l'Argan</h3>
-                <p>Flacon de 30ml - 22€</p>
-                <button onclick="ajouterAuPanier('Sérum visage', 22)">Ajouter</button>
-            </div>
-        </div>
+        <div id="liste-produits"></div>
     </section>
-
-    <!-- Panier -->
-    <div id="panier" class="hidden">
-        <h2>Votre Panier</h2>
-        <ul id="panier-liste"></ul>
-        <p>Total : <span id="total-prix">0</span>€</p>
-        <button onclick="viderPanier()">Vider le panier</button>
-    </div>
-
-    <!-- Section Panier -->
-<div id="panier" class="hidden">
-    <h2>Votre Panier</h2>
-    <ul id="panier-liste"></ul>
-    <p>Total : <span id="total-prix">0</span>€</p>
-    
-    <!-- Bouton de paiement Stripe -->
-    <button id="stripe-pay">Payer avec Stripe</button>
-
-    <!-- Bouton de paiement PayPal -->
-    <div id="paypal-button-container"></div>
-
-    <button onclick="viderPanier()">Vider le panier</button>
-</div>
-
 
     <script src="script.js"></script>
 </body>
