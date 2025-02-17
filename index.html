@@ -20,47 +20,76 @@
         </nav>
     </header>
 
-    <section class="produits">
-        <h2>Nos Produits Artisanal & Bio</h2>
+    <section class="hero">
+        <img src="banniere-accueil.jpg" alt="Bannière Accueil" class="hero-image">
+        <div class="hero-content">
+            <h2>Bienvenue dans Notre Boutique de Luxe</h2>
+            <p>Découvrez nos produits artisanaux et biologiques de la plus haute qualité, directement de la nature à vous.</p>
+            <a href="produits.html" class="cta-button">Voir Nos Produits</a>
+        </div>
+    </section>
+
+    <section class="a-propos">
+        <h2>À Propos de Nous</h2>
+        <p>Nous sommes dédiés à offrir des produits de beauté naturels et luxueux. Chaque produit est soigneusement élaboré avec les meilleurs ingrédients biologiques pour assurer une expérience de soin exceptionnelle.</p>
+    </section>
+
+    <section class="produits-phare">
+        <h2>Nos Produits Phare</h2>
         <div class="produits-container">
             <div class="produit">
                 <img src="huile-argan-bio.jpg" alt="Huile d'Argan Bio Pure">
                 <h3>Huile d'Argan Bio Pure</h3>
-                <p>Flacon de 100ml - 30€</p>
-                <p>Notre huile d'argan biologique est 100% pure et pressée à froid pour préserver ses propriétés naturelles. Idéale pour nourrir et hydrater la peau et les cheveux, elle est riche en vitamine E et en acides gras essentiels.</p>
+                <p>100ml - 30€</p>
                 <button onclick="ajouterAuPanier('Huile d\'Argan Bio Pure', 30)">Ajouter</button>
             </div>
-            
             <div class="produit">
                 <img src="savon-argan-artisanal.jpg" alt="Savon Artisanal à l'Argan">
                 <h3>Savon Artisanal à l'Argan</h3>
                 <p>Lot de 3 - 15€</p>
-                <p>Ce savon artisanal est fabriqué à la main avec des ingrédients naturels, y compris l'huile d'argan. Il hydrate en profondeur tout en nettoyant délicatement, laissant la peau douce et revitalisée.</p>
                 <button onclick="ajouterAuPanier('Savon Artisanal à l\'Argan', 15)">Ajouter</button>
             </div>
-            
             <div class="produit">
                 <img src="creme-argan-luxe.jpg" alt="Crème Hydratante Prémium">
                 <h3>Crème Hydratante Prémium</h3>
-                <p>Pot de 50ml - 40€</p>
-                <p>Enrichie en huile d'argan et en collagène naturel, cette crème hydratante prémium offre une hydratation intense et aide à améliorer l'élasticité de la peau. Parfaite pour une peau éclatante et en bonne santé.</p>
+                <p>50ml - 40€</p>
                 <button onclick="ajouterAuPanier('Crème Hydratante Prémium', 40)">Ajouter</button>
             </div>
         </div>
     </section>
 
-    <section class="marche-luxe">
-        <h2>Le Marché du Luxe en Cosmétique Naturel</h2>
-        <p>Le marché du luxe en cosmétique naturel est en pleine expansion. Les consommateurs recherchent de plus en plus des produits de beauté haut de gamme qui utilisent des ingrédients naturels et durables. Ces produits offrent non seulement des avantages pour la peau, mais sont également respectueux de l'environnement. Les marques de luxe investissent dans la recherche et l'innovation pour créer des formulations efficaces et sûres, tout en mettant l'accent sur le packaging élégant et la responsabilité sociale.</p>
-        <p>Les produits cosmétiques naturels de luxe incluent des huiles essentielles, des extraits de plantes rares, et des ingrédients biologiques certifiés. L'huile d'argan, par exemple, est prisée pour ses propriétés hydratantes et nourrissantes. Utilisée dans les soins de la peau et des cheveux, elle est devenue un incontournable des gammes de produits de beauté de luxe.</p>
+    <section class="temoignages">
+        <h2>Témoignages</h2>
+        <div class="temoignage">
+            <p>"J'adore l'huile d'argan de cette boutique! Ma peau n'a jamais été aussi douce et éclatante."</p>
+            <p>- Marie</p>
+        </div>
+        <div class="temoignage">
+            <p>"Le savon artisanal est incroyable. Il nettoie ma peau en douceur et la laisse parfaitement hydratée."</p>
+            <p>- Julien</p>
+        </div>
     </section>
 
-    <div id="panier" class="hidden">
-        <h2>Votre Panier</h2>
-        <ul id="panier-liste"></ul>
-        <p>Total : <span id="total-prix">0</span>€</p>
-        <button onclick="viderPanier()">Vider le panier</button>
-    </div>
+    <section class="newsletter">
+        <h2>Inscrivez-vous à notre Newsletter</h2>
+        <p>Recevez les dernières nouvelles et offres spéciales directement dans votre boîte mail.</p>
+        <form>
+            <input type="email" placeholder="Votre email" required>
+            <input type="submit" value="S'inscrire">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Huile d'Argan. Tous droits réservés.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </footer>
 
     <script src="script.js"></script>
 </body>
