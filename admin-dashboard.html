@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Tableau de Bord</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tableau de Bord Administrateur</h1>
+        <button id="logout">Déconnexion</button>
+    </header>
+
+    <section>
+        <h2>Gestion des Produits</h2>
+        <form id="add-product-form">
+            <input type="text" id="product-name" placeholder="Nom du produit" required>
+            <input type="number" id="product-price" placeholder="Prix" required>
+            <input type="number" id="product-stock" placeholder="Stock" required>
+            <button type="submit">Ajouter</button>
+        </form>
+        <ul id="product-list"></ul>
+    </section>
+
+    <section>
+        <h2>Gestion des Commandes</h2>
+        <ul id="order-list"></ul>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+</html>
