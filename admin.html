@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gestion des Stocks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Gestion des Stocks</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="produits.html">Produits</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="admin">
+    <h2>Ajouter un Produit</h2>
+    <form id="ajout-produit">
+        <input type="text" id="nom-produit" placeholder="Nom du produit" required>
+        <input type="number" id="prix-produit" placeholder="Prix (€)" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Liste des Produits</h2>
+    <ul id="liste-produits"></ul>
+</section>
+
+<script src="admin.js"></script>
+</body>
+</html>
