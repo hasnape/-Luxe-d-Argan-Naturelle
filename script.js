@@ -1,63 +1,46 @@
+// Initialisation du panier
 let panier = [];
-const panierListe = document.getElementById("panier-liste");
-const totalPrix = document.getElementById("total-prix");
-const panierBtn = document.getElementById("cart-btn");
-const panierDiv = document.getElementById("panier");
+let totalPrix = 0;
 
+// Fonction pour ajouter un produit au panier
 function ajouterAuPanier(nom, prix) {
     panier.push({ nom, prix });
-    mettreAJourPanier();
+    totalPrix += prix;
+    miseAJourPanier();
 }
 
-function mettreAJourPanier() {
-    panierListe.innerHTML = "";
-    let total = 0;
+// Fonction pour mettre à jour l'affichage du panier
+function miseAJourPanier() {
+    let panierListe = document.getElementById("panier-liste");
+    let totalPrixElement = document.getElementById("total-prix");
+    let cartCount = document.getElementById("cart-count");
 
-    panier.forEach((item, index) => {
-        total += item.prix;
-        const li = document.createElement("li");
-        li.textContent = `${item.nom} - ${item.prix}€`;
-        panierListe.appendChild(li);
+    // Vider la liste avant de la remplir
+    panierListe.innerHTML = "";
+    
+    // Ajouter chaque élément du panier à la liste
+    panier.forEach((produit, index) => {
+        let item = document.createElement("li");
+        item.textContent = `${produit.nom} - ${produit.prix}€`;
+        panierListe.appendChild(item);
     });
 
-    totalPrix.textContent = total;
-    document.getElementById("cart-count").textContent = panier.length;
-    panierDiv.classList.remove("hidden");
+    // Mettre à jour le total
+    totalPrixElement.textContent = totalPrix;
+    
+    // Mettre à jour l'icône du panier
+    cartCount.textContent = panier.length;
 }
 
+// Fonction pour vider le panier
 function viderPanier() {
     panier = [];
-    mettreAJourPanier();
+    totalPrix = 0;
+    miseAJourPanier();
 }
 
-// Afficher/Masquer le panier
-panierBtn.addEventListener("click", () => {
-    panierDiv.classList.toggle("hidden");
+// Affichage du panier au clic sur l'icône
+document.getElementById("cart-btn").addEventListener("click", () => {
+    let panierElement = document.getElementById("panier");
+    panierElement.classList.toggle("hidden");
 });
-
-document.addEventListener("DOMContentLoaded", async () => {
-    const produitsContainer = document.getElementById("produits");
-
-    // Récupération des produits depuis le backend
-    const response = await fetch("http://localhost:3000/produits");
-    const produits = await response.json();
-
-    produitsContainer.innerHTML = produits.map(produit => `
-        <div class="produit">
-            <img src="assets/images/${produit.image}" alt="${produit.nom}">
-            <h2>${produit.nom}</h2>
-            <p>${produit.description}</p>
-            <p>Prix : ${produit.prix}€</p>
-            <button onclick="ajouterAuPanier('${produit._id}', '${produit.nom}', ${produit.prix})">Ajouter au panier</button>
-        </div>
-    `).join('');
-});
-
-// Fonction pour ajouter un produit au panier (stocké en localStorage)
-function ajouterAuPanier(id, nom, prix) {
-    let panier = JSON.parse(localStorage.getItem("panier")) || [];
-    panier.push({ id, nom, prix, quantite: 1 });
-    localStorage.setItem("panier", JSON.stringify(panier));
-    alert("Produit ajouté au panier !");
-}
-
