@@ -77,3 +77,19 @@ paypal.Buttons({
         });
     }
 }).render("#paypal-button-container");
+
+document.getElementById("stripe-pay").addEventListener("click", function () {
+    let client = JSON.parse(sessionStorage.getItem("loggedInUser")).email;
+    let produitsCommandes = panier;
+    let totalPrix = panier.reduce((acc, p) => acc + p.prix, 0);
+
+    fetch("http://localhost:3000/commande", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ client, produits: produitsCommandes, total: totalPrix })
+    })
+    .then(response => response.json())
+    .then(data => alert(data.message))
+    .catch(error => console.error("Erreur:", error));
+});
+
