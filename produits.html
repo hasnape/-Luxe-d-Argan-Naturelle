@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - Huile d'Argan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Huile d'Argan Naturelle & Produits de Luxe</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li id="cart-btn">🛒 Panier (<span id="cart-count">0</span>)</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="produits">
+        <h2>Nos Produits Artisanal & Bio</h2>
+        <div class="produits-container">
+            <div class="produit">
+                <img src="huile-argan-bio.jpg" alt="Huile d'Argan Bio Pure">
+                <h3>Huile d'Argan Bio Pure</h3>
+                <p>Flacon de 100ml - 30€</p>
+                <p>Notre huile d'argan biologique est 100% pure et pressée à froid pour préserver ses propriétés naturelles. Idéale pour nourrir et hydrater la peau et les cheveux, elle est riche en vitamine E et en acides gras essentiels.</p>
+                <button onclick="ajouterAuPanier('Huile d\'Argan Bio Pure', 30)">Ajouter</button>
+            </div>
+            
+            <div class="produit">
+                <img src="savon-argan-artisanal.jpg" alt="Savon Artisanal à l'Argan">
+                <h3>Savon Artisanal à l'Argan</h3>
+                <p>Lot de 3 - 15€</p>
+                <p>Ce savon artisanal est fabriqué à la main avec des ingrédients naturels, y compris l'huile d'argan. Il hydrate en profondeur tout en nettoyant délicatement, laissant la peau douce et revitalisée.</p>
+                <button onclick="ajouterAuPanier('Savon Artisanal à l\'Argan', 15)">Ajouter</button>
+            </div>
+            
+            <div class="produit">
+                <img src="creme-argan-luxe.jpg" alt="Crème Hydratante Prémium">
+                <h3>Crème Hydratante Prémium</h3>
+                <p>Pot de 50ml - 40€</p>
+                <p>Enrichie en huile d'argan et en collagène naturel, cette crème hydratante prémium offre une hydratation intense et aide à améliorer l'élasticité de la peau. Parfaite pour une peau éclatante et en bonne santé.</p>
+                <button onclick="ajouterAuPanier('Crème Hydratante Prémium', 40)">Ajouter</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="panier" class="hidden">
+        <h2>Votre Panier</h2>
+        <ul id="panier-liste"></ul>
+        <p>Total : <span id="total-prix">0</span>€</p>
+        <button onclick="viderPanier()">Vider le panier</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
