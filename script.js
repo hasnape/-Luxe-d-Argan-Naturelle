@@ -44,3 +44,36 @@ document.getElementById("cart-btn").addEventListener("click", () => {
     let panierElement = document.getElementById("panier");
     panierElement.classList.toggle("hidden");
 });
+
+// Initialisation Stripe (remplace "VOTRE_CLE_PUBLIQUE_STRIPE" par ta clé)
+let stripe = Stripe("VOTRE_CLE_PUBLIQUE_STRIPE");
+
+document.getElementById("stripe-pay").addEventListener("click", function () {
+    // Envoyer les données du panier au serveur
+    fetch("/stripe-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ panier: panier })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.url) window.location.href = data.url;
+    });
+});
+
+// PayPal
+paypal.Buttons({
+    createOrder: function (data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: { value: totalPrix }
+            }]
+        });
+    },
+    onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+            alert("Paiement réussi ! Merci " + details.payer.name.given_name);
+            viderPanier();
+        });
+    }
+}).render("#paypal-button-container");
