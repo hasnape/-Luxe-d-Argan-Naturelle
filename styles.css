@@ -1,17 +1,18 @@
 /* Styles de base */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0d0d0d;
-    color: #fff;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 /* En-tête */
 header {
-    background-color: #111;
+    background-color: #000;
     padding: 20px;
     text-align: center;
+    color: #fff;
 }
 
 nav ul {
@@ -24,19 +25,87 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #d4af37;
+    color: #fff;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #fff;
+    color: #d4af37;
 }
 
-/* Section Produits */
-.produits {
+/* Section Hero */
+.hero {
+    position: relative;
     text-align: center;
+    color: white;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.cta-button {
+    background-color: #d4af37;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Section À Propos */
+.a-propos {
     padding: 50px 10px;
+    text-align: center;
+}
+
+.a-propos h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.a-propos p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Section Produits Phare */
+.produits-phare {
+    padding: 50px 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.produits-phare h2 {
+    font-size: 28px;
+    color: #333;
 }
 
 .produits-container {
@@ -47,17 +116,12 @@ nav ul li a:hover {
 }
 
 .produit {
-    background: #1a1a1a;
+    background: #f5f5f5;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
-    transition: transform 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
-}
-
-.produit:hover {
-    transform: scale(1.05);
 }
 
 .produit img {
@@ -66,17 +130,18 @@ nav ul li a:hover {
 }
 
 .produit h3 {
-    color: #d4af37;
+    color: #333;
     font-size: 22px;
 }
 
 .produit p {
     font-size: 18px;
+    color: #666;
 }
 
 .produit button {
     background: #d4af37;
-    color: #111;
+    color: #000;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -87,71 +152,109 @@ nav ul li a:hover {
 
 .produit button:hover {
     background: #fff;
-    color: #111;
+    color: #000;
 }
 
-/* Panier */
-#panier {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    width: 400px;
+/* Section Témoignages */
+.temoignages {
+    padding: 50px 10px;
+    background-color: #f5f5f5;
     text-align: center;
 }
 
-#panier h2 {
-    color: #d4af37;
+.temoignages h2 {
+    font-size: 28px;
+    color: #333;
 }
 
-#panier ul {
-    list-style: none;
-    padding: 0;
+.temoignage {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    display: inline-block;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
 }
 
-#panier button {
+.temoignage p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Section Newsletter */
+.newsletter {
+    padding: 50px 10px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.newsletter p {
+    font-size: 18px;
+    color: #666;
+}
+
+.newsletter form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.newsletter input[type="submit"] {
     background: #d4af37;
-    color: #111;
-    padding: 10px 15px;
+    color: #000;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-#panier button:hover {
+.newsletter input[type="submit"]:hover {
     background: #fff;
+    color: #000;
 }
 
-/* Formulaires */
-form {
-    background: #1a1a1a;
+/* Pied de page */
+footer {
+    background-color: #000;
+    color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
-    max-width: 400px;
-    margin: auto;
+    text-align: center;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
-input[type="submit"] {
-    background: #d4af37;
-    color: #111;
-    cursor: pointer;
+footer nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
-input[type="submit"]:hover {
-    background: #fff;
+footer nav ul li a:hover {
+    color: #d4af37;
 }
