@@ -1,22 +1,25 @@
 let produits = [];
 
-document.getElementById("ajout-produit").addEventListener("submit", function(event) {
+document.getElementById("ajout-produit").addEventListener("submit", function (event) {
     event.preventDefault();
-
+    
     let nom = document.getElementById("nom-produit").value;
-    let prix = document.getElementById("prix-produit").value;
+    let prix = parseFloat(document.getElementById("prix-produit").value);
+    let stock = parseInt(document.getElementById("stock-produit").value);
 
-    produits.push({ nom, prix });
+    let produit = { nom, prix, stock };
+    produits.push(produit);
+
     afficherProduits();
 });
 
 function afficherProduits() {
-    const liste = document.getElementById("liste-produits");
-    liste.innerHTML = "";
+    let listeProduits = document.getElementById("liste-produits");
+    listeProduits.innerHTML = "";
 
     produits.forEach((produit, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${produit.nom} - ${produit.prix}€`;
-        liste.appendChild(li);
+        let item = document.createElement("li");
+        item.textContent = `${produit.nom} - ${produit.prix}€ - Stock : ${produit.stock}`;
+        listeProduits.appendChild(item);
     });
 }
