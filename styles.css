@@ -1,0 +1,157 @@
+/* Styles de base */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* En-tête */
+header {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d4af37;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* Section Produits */
+.produits {
+    text-align: center;
+    padding: 50px 10px;
+}
+
+.produits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.produit {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
+    transition: transform 0.3s;
+    width: 300px;
+    text-align: center;
+}
+
+.produit:hover {
+    transform: scale(1.05);
+}
+
+.produit img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.produit h3 {
+    color: #d4af37;
+    font-size: 22px;
+}
+
+.produit p {
+    font-size: 18px;
+}
+
+.produit button {
+    background: #d4af37;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.produit button:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* Panier */
+#panier {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 400px;
+    text-align: center;
+}
+
+#panier h2 {
+    color: #d4af37;
+}
+
+#panier ul {
+    list-style: none;
+    padding: 0;
+}
+
+#panier button {
+    background: #d4af37;
+    color: #111;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#panier button:hover {
+    background: #fff;
+}
+
+/* Formulaires */
+form {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background: #d4af37;
+    color: #111;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #fff;
+}
